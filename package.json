@@ -1,0 +1,21 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-changed": "^3.1.0",
+    "gulp-imagemin": "^3.3.0"
+  },
+  "dependencies": {
+    "@lordfriend/nya-bootstrap-select": "^2.4.0",
+    "gulp-jsonminify": "^1.0.0",
+    "gulp-merge-json": "^1.1.0",
+    "lodash": "^4.1.0"
+  }
+}
