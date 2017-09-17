@@ -1,0 +1,20 @@
+<div class="container-fluid table-responsive msd-table">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th ng-repeat="view in view.columns">{{view.column}}
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-if="tableData.rows.length > 0">
+            <tr ng-repeat="row in tableData.rows">
+                <td ng-repeat="view in view.columns"><span ng-if="view.type!='actions'">{{row[view.column]}}</span><span ng-if="view.type=='actions'" class="table-tools" ng-repeat="icon in view.icons"><i class="{{icon.class}}" ng-click="$eval(icon.action)(row,icon.params)"></i></span></td>
+            </tr>
+        </tbody>
+        <tbody ng-if="tableData.rows.length == 0">
+            <tr>
+                <td class="text-center no-data-table" colspan="{{view.columns.length}}">{{tableData.noRecardsMsg}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
