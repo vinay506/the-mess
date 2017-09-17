@@ -1,0 +1,45 @@
+ {
+     "home-view":
+     {
+         "columns": [
+         {
+             "column": "Product",
+             "type": "String"
+         },
+         {
+             "column": "Quantity",
+             "type": "Integer"
+         },
+         {
+             "column": "Price",
+             "type": "Amount"
+         },
+         {
+             "column": "Total",
+             "type": "Aggregated"
+         },
+         {
+             "column": "Options",
+             "type": "actions",
+             "icons": [
+             {
+                 "class": "fa fa-pencil-square-o",
+                 "action": "edit",
+                 "params":
+                 {
+                     "service": "TableService",
+                     "method": "editCartItems"
+                 }
+             },
+             {
+                 "class": "fa fa-trash-o",
+                 "action": "delete",
+                 "params":
+                 {
+                     "service": "TableService",
+                     "method": "deleteCartItems"
+                 }
+             }]
+         }]
+     }
+ }
