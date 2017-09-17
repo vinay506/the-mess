@@ -1,0 +1,26 @@
+{
+    "msd-view":
+    {
+        "columns": [
+        {
+            "column": "Product",
+            "type": "String"
+        },
+        {
+            "column": "Quantity",
+            "type": "Integer"
+        },
+        {
+            "column": "price",
+            "type": "Amount"
+        },
+        {
+            "column": "Total",
+            "type": "Aggregated"
+        },
+        {
+            "column": "Date",
+            "type": "Date"
+        }]
+    }
+}

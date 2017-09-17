@@ -1,0 +1,14 @@
+.msd-filter {
+    margin-top: 50px;
+}
+
+
+.msd-filter button[type="submit"] {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.msd-table {
+    margin-left: 15px;
+    margin-top: 30px;
+}
