@@ -1,0 +1,65 @@
+{
+    "user-data":
+    {
+        "noRecardsMsg": "No user data found , please select user",
+        "rows": [
+            {
+                "UserId": "506",
+
+                "Name": "vinay",
+
+                "Deposited": 400,
+
+                "Borrowed": 0,
+
+                "Balance": 0
+            },
+            {
+                "UserId": "533",
+
+                "Name": "kvsr",
+
+                "Deposited": 4000,
+
+                "Borrowed": 0,
+
+                "Balance": 0
+            },
+            {
+                "UserId": "427",
+
+                "Name": "sandeep",
+
+                "Deposited": 1500,
+
+                "Borrowed": 0,
+
+                "Balance": 2500
+            },
+            {
+                "UserId": "550",
+
+                "Name": "anil",
+
+                "Deposited": 4000,
+
+                "Borrowed": 0,
+
+                "Balance": 0
+            },
+            {
+                "UserId": "420",
+
+                "Name": "nagendra",
+
+                "Deposited": 4000,
+
+                "Borrowed": 0,
+
+                "Balance": 0
+            }
+
+        ]
+
+    }
+}
