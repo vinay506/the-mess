@@ -1,0 +1,9 @@
+<div class="col-md-3">
+    <p class="input-group">
+        <label>{{label}}</label>
+        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="ngModel" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default calender-btn" ng-click="openPopup()"><i class="glyphicon glyphicon-calendar"></i></button>	
+          </span>
+    </p>
+</div>

@@ -1,0 +1,22 @@
+.calender-btn {
+    height: 34px;
+    margin-top: 25px
+}
+
+.no-data-table {
+    height: 105px;
+    vertical-align: middle !important;
+}
+
+.nya-margin {
+    margin-bottom: 0px;
+}
+
+.brand-css {
+    width: 120px
+}
+
+.table-tools {
+    margin-left: 25px;
+    cursor: pointer;
+}
