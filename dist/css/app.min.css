@@ -1,0 +1,112 @@
+.calender-btn {
+    height: 34px;
+    margin-top: 25px
+}
+
+.no-data-table {
+    height: 105px;
+    vertical-align: middle !important;
+}
+
+.nya-margin {
+    margin-bottom: 0px;
+}
+
+.brand-css {
+    width: 120px
+}
+
+.table-tools {
+    margin-left: 25px;
+    cursor: pointer;
+}
+.plus-cart {
+
+    float: right;
+    margin-right: 15px;
+}
+
+.cart-body {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.cart-form-item {
+    margin-bottom: 15px;
+}
+
+.cart-form-item span {
+    min-width: 100px;
+}
+.header {
+    text-align: center;
+}
+
+.jumbotron {
+
+    padding-top: 1px !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 0px !important;
+}
+.loginForm {
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 25%;
+}
+
+.form-body {
+    margin-left: 65px;
+    width: 305px;
+    margin-bottom: 10px
+}
+
+.form-footer {
+    margin-left: 10px;
+}
+
+.loginForm input,
+.form-footer {
+    border-radius: 5px;
+}
+
+.loginForm input {
+    text-align: center;
+    height: 4%;
+}
+
+
+.loginForm span {
+    color: dimgray;
+}
+
+.frame-b,
+.frame-c {
+    background-color: #eeeeee;
+}
+
+.frame-b>div {
+    padding-left: 20px;
+}
+
+.frame-c div {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.carasole-imp {
+    overflow: hidden;
+}
+.msd-filter {
+    margin-top: 50px;
+}
+
+
+.msd-filter button[type="submit"] {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.msd-table {
+    margin-left: 15px;
+    margin-top: 30px;
+}

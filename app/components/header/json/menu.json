@@ -1,0 +1,36 @@
+{
+    "menu":
+    {
+        "brand":
+        {
+            "name": "Bachlor World",
+            "url": "/home"
+        },
+        "Pages": [
+        {
+            "name": "Home",
+            "isActive": true,
+            "url": "/home"
+        },
+        {
+            "name": "Mess Details",
+            "isActive": false,
+            "url": "/messDetails"
+        },
+        {
+            "name": "Pendings",
+            "isActive": false,
+            "url": "/pendings"
+        },
+        {
+            "name": "Profiles",
+            "isActive": false,
+            "url": "/profiles"
+        }],
+        "settings": [
+        {
+            "name": "Sign Out"
+        }]
+    }
+
+}

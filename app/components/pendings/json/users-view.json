@@ -1,0 +1,28 @@
+{
+    "user-view":
+    {
+        "columns": [
+        {
+            "column": "UserId",
+            "type": "String"
+        },
+        {
+            "column": "Name",
+            "type": "String"
+        },
+        {
+            "column": "Deposited",
+            "type": "Integer"
+        },
+        {
+            "column": "Borrowed",
+            "type": "Integer"
+        },
+        {
+            "column": "Balance",
+            "type": "Integer"
+        }]
+
+
+    }
+}

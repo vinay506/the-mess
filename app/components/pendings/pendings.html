@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="col-md-3">
+        <p class="input-group nya-margin">
+            <label>Users</label>
+            <ol class="nya-bs-select" ng-model="selectedUser" data-live-search="true" ng-change="onChange()">
+                <li nya-bs-option="user in users">
+                    <a>{{ user.name }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
+       
+                 </a>
+                </li>
+            </ol>
+        </p>
+    </div>
+</div>
+<table-view dataconf="user-data" view-conf-name="user-view">
+</table-view>

@@ -1,0 +1,14 @@
+<form class="loginForm">
+    <b>Sign in </b>
+    <p> to countinue your session</p>
+    <div class="input-group form-body">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" placeholder="username" ng-model="login.username">
+    </div>
+    <div class="input-group form-body">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="password" class="form-control" name="password" placeholder="Password" placeholder="password" ng-model="login.password">
+    </div>
+    <button value="submit" class="form-footer btn btn-info" ng-click="submit()">Submit</button>
+    <button value="clear" class="form-footer btn btn-info" ng-click="reset()">Clear</button>
+</form>
