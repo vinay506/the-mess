@@ -23,7 +23,6 @@ var vendor_js_files = [
     'app/assets/js/bootstrap.min.js',
     'app/assets/js/angular.min.js',
     'app/assets/js/angular-route.min.js',
-    'app/assets/js/underscore.js',
     'app/assets/js/angular-ui-notification.js',
     'app/assets/js/angular-cookies.min.js',
     'app/assets/js/ngStorage.js',
@@ -33,7 +32,8 @@ var vendor_js_files = [
     'app/assets/js/sweetalert2.min.js',
     'app/assets/js/nya-bs-select.min.js',
     'app/assets/js/SweetAlert.min.js',
-    'app/assets/js/sweet-alert.min.js'
+    'app/assets/js/sweet-alert.min.js',
+    'app/assets/js/lodash.min.js'
 
 ]
 
