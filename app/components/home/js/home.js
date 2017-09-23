@@ -4,24 +4,25 @@ app
     // =========================================================================
     .controller('homeController', homeController);
 
-function homeController($scope, $cookies, CofigService) {
-    $scope.addCartDetails = function() {
-        getTotal();
-        $scope.cartDetails.push($scope.cart);
+function homeController($scope, $cookies, CofigService, $uibModal) {
 
-        $scope.cart = {};
+    $scope.openAddCartModal = function() {
+        var modalInstance = $uibModal.open({
+            templateUrl: '/app/components/modal/modal.html',
+            controller: 'modalCtrl',
+            resolve: {
+                tableDetails: function() {
+                    return $scope.cartDetails
+                },
+                json: function() {
+                    return "add-cart"
+                }
+            }
+        });
+
     }
 
-    $scope.checkFieldType = function(field) {
-        if (field.type == "Aggregated" || field.type == "actions") {
-            return false;
-        }
-        return true;
-    }
 
-    function getTotal() {
-        $scope.cart.Total = $scope.cart.Quantity * $scope.cart.Price;
-    }
 
     function getConfig(json) {
         CofigService.getConfig(json).then(function(data) {
@@ -31,7 +32,6 @@ function homeController($scope, $cookies, CofigService) {
 
     function init() {
         $scope.cartDetails = [];
-        $scope.cart = {}
         $scope.message = "your seeing this message because your In homeController";
         console.log("iamin homeController::", $scope.message);
         getConfig("home-view");

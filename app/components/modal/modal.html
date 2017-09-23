@@ -1,0 +1,21 @@
+<div>
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">{{modalObj.title}}</h4>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div ng-repeat="field in modalObj.fields">
+                    <div class="input-group modal-form-item">
+                        <span class="input-group-addon">{{field.Lable}}</span>
+                        <input type="text" class="form-control" placeholder="please enter {{field.Lable | lowercase}} details " ng-model="fieldObj[field.Lable]">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-info" ng-repeat="footer in modalObj.footer" ng-click="$eval(footer.action)()">{{footer.Lable}}</button>
+        </div>
+    </div>
+</div>

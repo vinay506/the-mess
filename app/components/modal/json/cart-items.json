@@ -1,0 +1,28 @@
+ {
+     "add-cart":
+     {
+         "title": "Cart Item",
+         "fields": [
+         {
+             "Lable": "Product",
+             "type": "String"
+         },
+         {
+             "Lable": "Quantity",
+             "type": "Integer"
+         },
+         {
+             "Lable": "Price",
+             "type": "Amount"
+         }],
+         "footer": [
+         {
+             "Lable": "Add",
+             "action": "addCartDetails"
+         },
+         {
+             "Lable": "Close",
+             "action": "close"
+         }]
+     }
+ }

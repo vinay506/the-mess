@@ -3,16 +3,3 @@
     float: right;
     margin-right: 15px;
 }
-
-.cart-body {
-    max-height: 300px;
-    overflow-y: scroll;
-}
-
-.cart-form-item {
-    margin-bottom: 15px;
-}
-
-.cart-form-item span {
-    min-width: 100px;
-}
