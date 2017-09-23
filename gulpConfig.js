@@ -14,7 +14,8 @@ var app_js_files = [
     'app/components/pendings/js/pendings.js',
     'app/components/directives/js/uib-date-picker.js',
     'app/components/directives/js/table-view.js',
-    'app/services/TableService.js'
+    'app/services/TableService.js',
+    'app/components/modal/js/modal.js'
 
 ]
 

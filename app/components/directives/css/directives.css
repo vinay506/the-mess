@@ -20,3 +20,11 @@
     margin-left: 25px;
     cursor: pointer;
 }
+
+.modal-form-item {
+    margin-bottom: 15px;
+}
+
+.modal-form-item span {
+    min-width: 100px;
+}
