@@ -2,3 +2,7 @@ node_modules
 dist
 bower_components
 
+dist/css/app.min.css
+dist/css/vendor.min.css
+dist/js/app.min.js
+dist/js/vendor.min.js
