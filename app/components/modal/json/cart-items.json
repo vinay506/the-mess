@@ -4,24 +4,34 @@
          "title": "Cart Item",
          "fields": [
          {
-             "Lable": "Product",
-             "type": "String"
+             "Label": "Product",
+             "type": "text",
+             "isRequired": true,
+             "pattern": "/^[a-zA-Z]*$/",
+             "errorMsg": "Not a valid Product"
          },
          {
-             "Lable": "Quantity",
-             "type": "Integer"
+             "Label": "Quantity",
+             "type": "number",
+             "isRequired": false,
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid quantity"
          },
          {
-             "Lable": "Price",
-             "type": "Amount"
+             "Label": "Price",
+             "type": "number",
+             "isRequired": true,
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid price"
          }],
          "footer": [
          {
-             "Lable": "Add",
-             "action": "addCartDetails"
+             "Label": "Add",
+             "action": "addCartDetails",
+             "type": "submit"
          },
          {
-             "Lable": "Close",
+             "Label": "Close",
              "action": "close"
          }]
      }

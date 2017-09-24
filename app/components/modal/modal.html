@@ -5,17 +5,22 @@
             <h4 class="modal-title">{{modalObj.title}}</h4>
         </div>
         <div class="modal-body">
-            <form>
+            <form name="form" novalidate>
                 <div ng-repeat="field in modalObj.fields">
-                    <div class="input-group modal-form-item">
-                        <span class="input-group-addon">{{field.Lable}}</span>
-                        <input type="text" class="form-control" placeholder="please enter {{field.Lable | lowercase}} details " ng-model="fieldObj[field.Lable]">
+                    <div ng-if="field.type=='text'" class="input-group modal-form-item">
+                        <label class="input-group-addon">{{field.Label}} <b style="color:red" ng-show="field.isRequired"> *</b></label>
+                        <input name="{{field.Label}}" type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="please enter {{field.Label | lowercase}} details" ng-model="fieldObj[field.Label]" ng-required="field.isRequired">
                     </div>
+                    <div ng-if="field.type=='number'" class="input-group modal-form-item">
+                        <label class="input-group-addon">{{field.Label}} <b style="color:red" ng-show="field.isRequired"> *</b></label>
+                        <input name="{{field.Label}}" type="text" ng-pattern="/^[0-9]*$/" class="form-control" placeholder="please enter {{field.Label | lowercase}} details" ng-model="fieldObj[field.Label]" ng-required="field.isRequired">
+                    </div>
+                    <span style="color:red" ng-show="(form[field.Label].$viewValue!='' && form[field.Label].$invalid) && form[field.Label].$dirty">{{field.errorMsg}}</span>
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-info" ng-repeat="footer in modalObj.footer" ng-click="$eval(footer.action)()">{{footer.Lable}}</button>
+            <button type="submit" class="btn btn-info" ng-repeat="footer in modalObj.footer" ng-click="$eval(footer.action)(form)" ng-disabled="form.$invalid && footer.type=='submit'">{{footer.Label}}</button>
         </div>
     </div>
 </div>
