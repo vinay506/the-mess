@@ -1,14 +1,15 @@
-<form class="loginForm">
+<form class="loginForm" name="form" novalidate>
     <b>Sign in </b>
     <p> to countinue your session</p>
     <div class="input-group form-body">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" placeholder="username" ng-model="login.username">
+        <input type="text" name="username" class="form-control" placeholder="username" ng-model="login.username" required>
     </div>
     <div class="input-group form-body">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input type="password" class="form-control" name="password" placeholder="Password" placeholder="password" ng-model="login.password">
+        <input type="{{showpassword ? 'text' : 'password'}}" class="form-control" name="password" placeholder="password" ng-model="login.password" required>
+        <!-- <span toggle="#password-field" class="fa fa-fw fa-eye field-icon" ng-click="togglePsw()"> -->
     </div>
-    <button value="submit" class="form-footer btn btn-info" ng-click="submit()">Submit</button>
+    <button value="submit" ng-disabled="form.$invalid" class="form-footer btn btn-info" ng-click="submit()">Submit</button>
     <button value="clear" class="form-footer btn btn-info" ng-click="reset()">Clear</button>
 </form>

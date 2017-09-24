@@ -1,8 +1,8 @@
 var NotificationService = function(Notification, SweetAlert) {
     var service = {};
 
-    service.errorNotification = function(message) {
-        Notification.error({ message: message, positionY: 'top', positionX: 'right', delay: 1500 });
+    service.errorNotification = function(message, yaxis, xaxis) {
+        Notification.error({ message: message, positionY: yaxis, positionX: xaxis, delay: 1500 });
     }
 
     service.confirmNotification = function(next) {

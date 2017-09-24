@@ -13,9 +13,12 @@ function loginController($scope, AuthService, NotificationService, cookiesServic
         }
         return ref;
     }
+    $scope.togglePsw = function() {
+        $scope.showpassword = !$scope.showpassword;
+    }
 
     function setInvalidNotification() {
-        NotificationService.errorNotification('Please enter valid credentials');
+        NotificationService.errorNotification('Please enter valid credentials', 'top', 'right');
         $scope.reset();
     }
 
@@ -34,6 +37,7 @@ function loginController($scope, AuthService, NotificationService, cookiesServic
     }
 
     function init() {
+        $scope.showpassword = true;
         $scope.login = {};
         $scope.message = "your seeing this message because your In loginController";
         console.log("iamin loginController::", $scope.message);
