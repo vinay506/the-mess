@@ -3,3 +3,8 @@
     float: right;
     margin-right: 15px;
 }
+
+.save-cart {
+    float: left;
+    margin-left: 30px;
+}
