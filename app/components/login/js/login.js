@@ -37,7 +37,7 @@ function loginController($scope, AuthService, NotificationService, cookiesServic
     }
 
     function init() {
-        $scope.showpassword = true;
+        $scope.showpassword = false;
         $scope.login = {};
         $scope.message = "your seeing this message because your In loginController";
         console.log("iamin loginController::", $scope.message);
