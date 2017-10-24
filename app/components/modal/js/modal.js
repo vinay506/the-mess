@@ -6,16 +6,21 @@ app
 
 function modalCtrl($scope, tableDetails, json, CofigService, $uibModalInstance, FormValidateService) {
 
-    $scope.testFields = [{ "label": "TestLabel1" }, { "label": "TestLabel2" }]
-
     function getConfig(json) {
         CofigService.getConfig(json).then(function(data) {
             $scope.modalObj = data
         });
     }
+    $scope.addPendingDetails = function() {
+        pushTableData();
+    }
 
     $scope.addCartDetails = function() {
         getTotal();
+        pushTableData();
+    }
+
+    function pushTableData() {
         tableDetails.push($scope.fieldObj);
         $scope.fieldObj = {};
         $scope.close();

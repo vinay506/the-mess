@@ -1,0 +1,73 @@
+ {
+     "add-cart":
+     {
+         "title": "Cart Item",
+         "fields": [
+         {
+             "Label": "Product",
+             "type": "text",
+             "isRequired": true,
+         },
+         {
+             "Label": "Quantity",
+             "type": "number",
+             "isRequired": false,
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid quantity"
+         },
+         {
+             "Label": "Price",
+             "type": "number",
+             "isRequired": true,
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid price"
+         }],
+         "footer": [
+         {
+             "Label": "Add",
+             "action": "addCartDetails",
+             "type": "submit"
+         },
+         {
+             "Label": "Close",
+             "action": "close"
+         }]
+     },
+     "add-pendings":
+     {
+         "title": "Pending Item",
+         "fields": [
+         {
+             "Label": "UserId",
+             "type": "text",
+             "isRequired": true
+         },
+         {
+             "Label": "Name",
+             "type": "text",
+             "isRequired": true
+         },
+         {
+             "Label": "Deposited",
+             "type": "number",
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid deposited amount"
+         },
+         {
+             "Label": "Borrowed",
+             "type": "number",
+             "pattern": "/^[0-9]*$/",
+             "errorMsg": "Not a valid deposited amount"
+         }],
+         "footer": [
+         {
+             "Label": "Add",
+             "action": "addPendingDetails",
+             "type": "submit"
+         },
+         {
+             "Label": "Close",
+             "action": "close"
+         }]
+     }
+ }

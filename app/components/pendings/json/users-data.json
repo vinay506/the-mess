@@ -61,5 +61,11 @@
 
         ]
 
+    },
+    "add-pendings-data":
+    {
+        "noRecardsMsg": "Please add pendings details",
+        "rows": []
+
     }
 }
