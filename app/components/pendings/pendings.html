@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <div class="col-md-3">
+<div class="container-fluid pendings-filter">
+    <div class="col-md-2">
         <p class="input-group nya-margin">
             <label>Users</label>
-            <ol class="nya-bs-select" ng-model="selectedUser" data-live-search="true" ng-change="onChange()">
+            <ol class="nya-bs-select" ng-model="selectedUser" data-live-search="true">
                 <li nya-bs-option="user in users">
                     <a>{{ user.name }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
        
@@ -11,6 +11,26 @@
             </ol>
         </p>
     </div>
+    <div class="col-md-2 margin-left">
+        <p class="input-group nya-margin">
+            <label>Table type</label>
+            <ol class="nya-bs-select" ng-model="tableType" data-live-search="true">
+                <li nya-bs-option="type in tableTypes">
+                    <a>{{ type.DisplayLabel }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
+       
+                 </a>
+                </li>
+            </ol>
+        </p>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-if="tableType.type == 'getDetails'">Get details</button>
 </div>
-<table-view dataconf="user-data" view-conf-name="user-view">
+<table-view dataconf="user-data" view-conf-name="user-view" ng-if="tableType.type == 'getDetails'">
 </table-view>
+<div ng-if="tableType.type == 'addDetails'">
+    <table-view dataconf="add-pendings-data" view-conf-name="add-view">
+    </table-view>
+    <a href="javascript:void(0)" class="btn btn-info btn-lg plus-cart" ng-click="openAddPendingsModel()">
+          <span class="glyphicon glyphicon-plus-sign"></span> Plus
+        </a>
+</div>
