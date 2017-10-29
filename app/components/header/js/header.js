@@ -15,7 +15,9 @@ function headerCtrL($scope, cookiesService, CofigService, NavigationService) {
             }
         })
     }
-
+    $scope.navigateTo = function(item) {
+        NavigationService.navigateTo(item.url);
+    }
     $scope.logOut = function() {
         cookiesService.deleteCookie();
     }
