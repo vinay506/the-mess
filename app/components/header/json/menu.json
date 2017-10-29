@@ -21,16 +21,29 @@
             "name": "Pendings",
             "isActive": false,
             "url": "/pendings"
-        },
-        {
-            "name": "Profiles",
-            "isActive": false,
-            "url": "/profiles"
         }],
-        "settings": [
+        "settings":
         {
-            "name": "Sign Out"
-        }]
+            "name": "Settings",
+            "list": [
+            {
+                "name": "Profiles",
+                "class": "fa fa-users",
+                "action": "navigateTo",
+                "url": "/profiles"
+            },
+            {
+                "name": "My account",
+                "action": "navigateTo",
+                "class": "fa fa-user-secret",
+                "url": "/account"
+            },
+            {
+                "name": "Sign Out",
+                "class": "glyphicon glyphicon-log-out",
+                "action": "logOut"
+            }]
+        }
     }
 
 }
