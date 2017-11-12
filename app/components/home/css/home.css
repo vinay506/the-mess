@@ -8,3 +8,7 @@
     float: left;
     margin-left: 30px;
 }
+
+div .available-balance {
+    margin-left: 2%;
+}
