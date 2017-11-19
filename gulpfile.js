@@ -9,6 +9,7 @@ var changed = require('gulp-changed');
 
 var jsonMerge = require('gulp-merge-json');
 var jsonMinify = require('gulp-jsonminify');
+var server = require('gulp-express');
 
 var config = require('./gulpConfig.js');
 
@@ -35,10 +36,20 @@ gulp.task('VENDOR_JS', function() {
 
 gulp.task('connect', function() {
     connect.server({
-        root: '.',
         port: 8888
     });
 });
+
+gulp.task('server', ['server_js'], function() {
+    console.log("loading server_js files")
+    server.run(['./dist/serverJs/server.min.js']);
+});
+gulp.task('server_js', function() {
+    return gulp.src(config.Server_JS)
+        .pipe(concat('server.min.js'))
+        .pipe(gulp.dest(config.DESTINATIONS.serverJs));
+});
+
 
 gulp.task('vendor_css', function() {
     return gulp.src(config.VENDOR_CSS)
@@ -75,6 +86,6 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['APP_JS', 'app_css', 'minify-json', 'watch', 'connect'], function() {
+gulp.task('default', ['APP_JS', 'app_css', 'minify-json', 'watch', 'connect', 'server'], function() {
     console.log("successfully done ...");
 })

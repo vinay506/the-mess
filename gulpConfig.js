@@ -16,9 +16,12 @@ var app_js_files = [
     'app/components/directives/js/table-view.js',
     'app/services/TableService.js',
     'app/components/modal/js/modal.js',
-    'app/services/FormValidateService.js'
+    'app/services/FormValidateService.js',
+    'app/services/InterCepterService.js',
+    'app/services/QueryService.js'
 
 ]
+
 
 var vendor_js_files = [
     'app/assets/js/jquery.min.js',
@@ -60,13 +63,19 @@ var app_json_files = [
     'app/components/**/*.json'
 ]
 
+var server_js_files = [
+    'services/server.js',
+    'services/connection.js',
+    'services/login.js'
+]
 
 var destinations = {
     js: 'dist/js',
     css: 'dist/css',
     html: 'dist/html',
     image: 'dist/images',
-    json: 'dist/json'
+    json: 'dist/json',
+    serverJs: 'dist/serverjs'
 };
 var app_images = [
     'app/components/**/*.jpg'
@@ -74,6 +83,7 @@ var app_images = [
 
 module.exports = {
     APP_JS: app_js_files,
+    Server_JS: server_js_files,
     VENDOR_JS: vendor_js_files,
     VENDOR_CSS: vendor_css_files,
     APP_CSS: app_css_files,

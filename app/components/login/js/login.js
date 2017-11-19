@@ -4,7 +4,7 @@ app
     // =========================================================================
     .controller('loginController', loginController);
 
-function loginController($scope, AuthService, NotificationService, cookiesService, NavigationService) {
+function loginController($scope, AuthService, NotificationService, cookiesService, NavigationService, ApiService, QueryService) {
 
     function references() {
         var ref = {};
@@ -23,8 +23,15 @@ function loginController($scope, AuthService, NotificationService, cookiesServic
     }
 
     $scope.submit = function() {
-        AuthService.createSession($scope.login, references());
+        var query = QueryService.prepareUrl('login')
+        ApiService.post(query, $scope.login).then(function(response) {
+            if (response) {
+                AuthService.createSession(response.data, references());
+            }
+        });
+
     }
+
     $scope.reset = function() {
         $scope.login.username = '';
         $scope.login.password = '';
