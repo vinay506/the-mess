@@ -1,5 +1,5 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<div class="jumbotron text-center" ng-if="!getUserName()">
+<div class="jumbotron text-center" ng-show="!getUserName()">
     <div class="header">
         <h2>About the page</h2>
         <span>
@@ -7,7 +7,7 @@
     </span>
     </div>
 </div>
-<nav class="navbar navbar-inverse" ng-if="getUserName()">
+<nav class="navbar navbar-inverse" ng-show="getUserName()">
     <div class="container-fluid">
         <div class="navbar-header">
             <img class="navbar-brand brand-css" src="/app/components/header/images/favicon.ico.png" alt="{{menu.brand.name}}" title="{{menu.brand.name}}">
@@ -22,8 +22,7 @@
                  <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li ng-repeat="item in menu.settings.list"><a href="javascript:void(0)" ng-click="$eval(item.action)(item)"><span ng-if="item.class" class="{{item.class}}"></span> {{item.name}}</a></li>
-                </ul>
             </li>
-        </ul>
+            </ul>
     </div>
 </nav>

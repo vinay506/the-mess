@@ -43,7 +43,7 @@ app.config(function($routeProvider, $locationProvider, NotificationProvider) {
     });
 
 });
-
+app.constant('SERVICEURL', 'http://127.0.0.1:8080/');
 
 /*var app = angular.module('app', ['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider) {

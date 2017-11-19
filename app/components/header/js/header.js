@@ -29,6 +29,9 @@ function headerCtrL($scope, cookiesService, CofigService, NavigationService) {
         CofigService.getConfig('menu').then(function(data) {
             $scope.menu = angular.copy(data);
         });
+        $(document).ready(function() {
+            $(".dropdown-toggle").dropdown();
+        });
     }
     init()
 
