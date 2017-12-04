@@ -1,7 +1,7 @@
 var QueryService = function(SERVICEURL) {
     var service = {};
 
-    service.prepareUrl = function(url) {
+    service.prepareBaseUrl = function(url) {
         return SERVICEURL + url
     }
 

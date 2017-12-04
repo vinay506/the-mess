@@ -1,7 +1,6 @@
 app.post('/login', function(req, res) {
     console.log("in post login");
     validateUser(req, res);
-    // res.json({ "vinay": "vinay" });
 });
 
 app.get('/getUsers', function(req, res) {
@@ -11,10 +10,8 @@ app.get('/getUsers', function(req, res) {
 
 function validateUser(req, res) {
     getConnection(req, res, function(connection) {
-        // console.log("req.body::", req.body.params)
         if (req.body && req.body.params) {
             var params = req.body.params;
-            console.log("params ::", params);
             var query = "select * from authtable where username=" + appendQuotes(params.username) + "AND password=" + appendQuotes(params.password);
             searchForUser(query, connection, params, res);
         }
@@ -36,7 +33,7 @@ function searchForUser(query, connection, params, res) {
             res.json(rows);
         } else {
             console.log("Error in login");
-            res.json(err);
+            res.status(500).send({ error: 'Something failed!' })
         }
     });
 

@@ -14,6 +14,7 @@ var tableView = function(CofigService, $timeout, $injector, NotificationService)
                 var ref = {};
                 ref.setTableData = function(data) {
                     scope.tableData = angular.copy(data);
+                    scope.update = angular.copy(data.rows);
                 };
                 ref.getTableData = function() {
                     return scope.tableData;

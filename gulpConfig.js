@@ -66,7 +66,8 @@ var app_json_files = [
 var server_js_files = [
     'services/server.js',
     'services/connection.js',
-    'services/login.js'
+    'services/login.js',
+    'services/messDetails.js'
 ]
 
 var destinations = {

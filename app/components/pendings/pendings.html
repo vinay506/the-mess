@@ -2,7 +2,7 @@
     <div class="col-md-2">
         <p class="input-group nya-margin">
             <label>Users</label>
-            <ol class="nya-bs-select" ng-model="selectedUser" data-live-search="true">
+            <ol class="nya-bs-select" title="select" ng-model="selectedUser" data-live-search="true">
                 <li nya-bs-option="user in users">
                     <a>{{ user.name }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
        
@@ -14,7 +14,7 @@
     <div class="col-md-2 margin-left">
         <p class="input-group nya-margin">
             <label>Table type</label>
-            <ol class="nya-bs-select" ng-model="tableType" data-live-search="true">
+            <ol class="nya-bs-select" title="select" ng-model="tableType" data-live-search="true">
                 <li nya-bs-option="type in tableTypes">
                     <a>{{ type.DisplayLabel }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
        

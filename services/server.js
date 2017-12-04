@@ -6,7 +6,9 @@ var mysql = require('mysql');
 var cors = require('cors');
 var _ = require('underscore');
 // Create application/x-www-form-urlencoded parser
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+
+app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 

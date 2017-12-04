@@ -4,7 +4,7 @@ app
     // =========================================================================
     .controller('homeController', homeController);
 
-function homeController($scope, $cookies, CofigService, $uibModal) {
+function homeController($scope, $cookies, CofigService, $uibModal, QueryService, ApiService) {
 
     $scope.openAddCartModal = function() {
         var modalInstance = $uibModal.open({
@@ -22,6 +22,18 @@ function homeController($scope, $cookies, CofigService, $uibModal) {
 
     }
 
+    $scope.saveDetails = function() {
+        var query = QueryService.prepareBaseUrl('addDetails')
+        ApiService.post(query, $scope.cartDetails).then(function(response) {
+            if (response.error) {
+                console.log("Getting error in add details")
+            }
+            if (response.data) {
+                console.log("Saved Successfully");
+                $scope.cartDetails = [];
+            }
+        });
+    }
 
 
     function getConfig(json) {
