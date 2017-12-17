@@ -118,8 +118,6 @@ function appendValue(row, key, columns) {
 }
 
 function getMetaData(key, columns) {
-    console.log("key :: ", key);
     var metaData = _.findWhere(columns, { 'Field': key });
-    console.log("metaData", metaData)
     return metaData;
 }
