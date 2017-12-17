@@ -1,3 +1,7 @@
+var express = require('express');
+var _ = require('underscore');
+var mysql = require('mysql');
+
 var pool = mysql.createPool({
     connectionLimit: 100, //important
     host: 'localhost',
@@ -7,46 +11,47 @@ var pool = mysql.createPool({
     debug: false
 });
 
-var getConnection = function(req, res, next) {
-    pool.getConnection(function(err, connection) {
-        if (err) {
-            connection.release();
-            res.json({ "code": 100, "status": "Error in connection database" });
-            return;
-        }
+module.exports = {
 
-        console.log('connected as id ' + connection.threadId);
+    getConnection: function(req, res, next) {
+        pool.getConnection(function(err, connection) {
+            if (err) {
+                connection.release();
+                res.json({ "code": 100, "status": "Error in connection database" });
+                return;
+            }
 
-        if (next) {
-            next(connection)
-        }
+            console.log('connected as id ' + connection.threadId);
 
-        connection.on('error', function(err) {
-            res.json({ "code": 100, "status": "Error in connection database" });
-            return;
+            if (next) {
+                next(connection)
+            }
+
+            connection.on('error', function(err) {
+                res.json({ "code": 100, "status": "Error in connection database" });
+                return;
+            });
         });
-    });
-};
-
-
-function getColumns(req, res, tableName, next) {
-    var query = 'SHOW COLUMNS FROM ' + tableName
-    console.log("query  : for show::", query);
-    getConnection(req, res, function(connection) {
-        connection.query(query, function(err, rows) {
-            connection.release();
-            next(rows);
+    },
+    getColumns: function(req, res, tableName, next) {
+        var query = 'SHOW COLUMNS FROM ' + tableName
+        console.log("query  : for show::", query);
+        this.getConnection(req, res, function(connection) {
+            connection.query(query, function(err, rows) {
+                connection.release();
+                next(rows);
+            });
         });
-    });
-}
+    },
 
+    prepareQuery: function(params, columns, tableName) {
+        var query = "insert into " + tableName;
+        var select = prepareSelect(params[0]);
+        var values = prepareQueryValues(params, columns);
+        query = query + select + values;
+        return query;
+    }
 
-function prepareQuery(params, columns, tableName) {
-    var query = "insert into " + tableName;
-    var select = prepareSelect(params[0]);
-    var values = prepareQueryValues(params, columns);
-    query = query + select + values;
-    return query;
 }
 
 function prepareSelect(row) {
@@ -102,7 +107,7 @@ function parepareValues(row, columns) {
 function appendValue(row, key, columns) {
     var record = '';
     var metaData = getMetaData(key, columns);
-    if (metaData.Type.indexOf("char") != -1) {
+    if (metaData && metaData.Type.indexOf("char") != -1) {
         record = "'" + row[key] + "'";
     } else if (metaData.Type.indexOf("date") != -1) {
         record = "'" + row[key] + "'";
@@ -113,6 +118,8 @@ function appendValue(row, key, columns) {
 }
 
 function getMetaData(key, columns) {
+    console.log("key :: ", key);
     var metaData = _.findWhere(columns, { 'Field': key });
+    console.log("metaData", metaData)
     return metaData;
 }

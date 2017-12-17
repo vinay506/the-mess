@@ -1,8 +1,13 @@
-app.get('/messDetails', function(req, res) {
+var express = require('express'),
+    router = express.Router(),
+    db = require('./db.js');
+
+
+router.get('/messDetails', function(req, res) {
     console.log("in get messDetails");
 });
 
-app.post('/addDetails', function(req, res) {
+router.post('/addDetails', function(req, res) {
     console.log("in post messDetails");
     addDetails(req, res);
 });
@@ -14,8 +19,8 @@ function addDetails(req, res) {
     }
     if (params && params.length > 0) {
         var tableName = 'messDetails';
-        getColumns(req, res, tableName, function(rows) {
-            insertDetails(params, req, res, prepareQuery(params, rows, tableName));
+        db.getColumns(req, res, tableName, function(rows) {
+            insertDetails(params, req, res, db.prepareQuery(params, rows, tableName));
         })
     } else {
         res.json([]);
@@ -25,7 +30,7 @@ function addDetails(req, res) {
 
 function insertDetails(params, req, res, query) {
     console.log("query :::", query);
-    getConnection(req, res, function(connection) {
+    db.getConnection(req, res, function(connection) {
         connection.query(query, function(err, rows) {
             connection.release();
             if (!err) {
@@ -37,3 +42,4 @@ function insertDetails(params, req, res, query) {
         });
     })
 }
+module.exports = router;

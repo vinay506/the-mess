@@ -63,20 +63,14 @@ var app_json_files = [
     'app/components/**/*.json'
 ]
 
-var server_js_files = [
-    'services/server.js',
-    'services/connection.js',
-    'services/login.js',
-    'services/messDetails.js'
-]
+
 
 var destinations = {
     js: 'dist/js',
     css: 'dist/css',
     html: 'dist/html',
     image: 'dist/images',
-    json: 'dist/json',
-    serverJs: 'dist/serverjs'
+    json: 'dist/json'
 };
 var app_images = [
     'app/components/**/*.jpg'
@@ -84,7 +78,6 @@ var app_images = [
 
 module.exports = {
     APP_JS: app_js_files,
-    Server_JS: server_js_files,
     VENDOR_JS: vendor_js_files,
     VENDOR_CSS: vendor_css_files,
     APP_CSS: app_css_files,
