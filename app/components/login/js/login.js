@@ -23,7 +23,7 @@ function loginController($scope, AuthService, NotificationService, cookiesServic
     }
 
     $scope.submit = function() {
-        var query = QueryService.prepareUrl('login')
+        var query = QueryService.prepareBaseUrl('login')
         ApiService.post(query, $scope.login).then(function(response) {
             if (response) {
                 AuthService.createSession(response.data, references());

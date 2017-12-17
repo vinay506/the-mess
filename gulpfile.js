@@ -40,15 +40,11 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('server', ['server_js'], function() {
+gulp.task('server', function() {
     console.log("loading server_js files")
-    server.run(['./dist/serverJs/server.min.js']);
+    server.run(['./server.js']);
 });
-gulp.task('server_js', function() {
-    return gulp.src(config.Server_JS)
-        .pipe(concat('server.min.js'))
-        .pipe(gulp.dest(config.DESTINATIONS.serverJs));
-});
+
 
 
 gulp.task('vendor_css', function() {

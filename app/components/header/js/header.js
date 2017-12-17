@@ -4,7 +4,7 @@ app
     // =========================================================================
     .controller('headerCtrL', headerCtrL);
 
-function headerCtrL($scope, cookiesService, CofigService, NavigationService) {
+function headerCtrL($scope, cookiesService, CofigService, NavigationService, $timeout) {
     $scope.activatePage = function(item) {
         _.each($scope.menu.Pages, function(page) {
             if (page.name == item.name) {
@@ -24,13 +24,13 @@ function headerCtrL($scope, cookiesService, CofigService, NavigationService) {
     $scope.getUserName = function() {
         return cookiesService.getUserName();
     }
+    $timeout(function function_name(argument) {
+        $(".dropdown-toggle").dropdown();
+    }, 30);
 
     function init() {
         CofigService.getConfig('menu').then(function(data) {
             $scope.menu = angular.copy(data);
-        });
-        $(document).ready(function() {
-            $(".dropdown-toggle").dropdown();
         });
     }
     init()

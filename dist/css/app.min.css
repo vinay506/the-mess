@@ -20,23 +20,36 @@
     margin-left: 25px;
     cursor: pointer;
 }
+
+.modal-form-item {
+    margin-bottom: 15px;
+}
+
+.modal-form-item label {
+    min-width: 100px;
+}
+
+.pendings-filter button[type="submit"] {
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.pendings-filter .margin-left {
+    margin-left: 30px;
+}
 .plus-cart {
 
     float: right;
     margin-right: 15px;
 }
 
-.cart-body {
-    max-height: 300px;
-    overflow-y: scroll;
+.save-cart {
+    float: left;
+    margin-left: 30px;
 }
 
-.cart-form-item {
-    margin-bottom: 15px;
-}
-
-.cart-form-item span {
-    min-width: 100px;
+div .available-balance {
+    margin-left: 2%;
 }
 .header {
     text-align: center;
@@ -95,6 +108,14 @@
 
 .carasole-imp {
     overflow: hidden;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
 }
 .msd-filter {
     margin-top: 50px;

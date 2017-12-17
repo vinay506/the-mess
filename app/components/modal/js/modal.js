@@ -4,7 +4,7 @@ app
     // =========================================================================
     .controller('modalCtrl', modalCtrl);
 
-function modalCtrl($scope, tableDetails, json, CofigService, $uibModalInstance, FormValidateService) {
+function modalCtrl($scope, tableDetails, json, CofigService, $uibModalInstance, FormValidateService, $filter) {
 
     function getConfig(json) {
         CofigService.getConfig(json).then(function(data) {
@@ -17,6 +17,7 @@ function modalCtrl($scope, tableDetails, json, CofigService, $uibModalInstance, 
 
     $scope.addCartDetails = function() {
         getTotal();
+        $scope.fieldObj.date = $filter('date')(new Date(), 'yyyy-MM-dd HH:mm');
         pushTableData();
     }
 
