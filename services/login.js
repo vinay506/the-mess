@@ -16,10 +16,9 @@ function validateUser(req, res) {
     db.getConnection(req, res, function(connection) {
         if (req.body && req.body.params) {
             var params = req.body.params;
-            var query = "select * from authtable where username=" + appendQuotes(params.username) + "AND password=" + appendQuotes(params.password);
-            searchForUser(query, connection, params, res);
+            var query = "SELECT userinfo.username FROM userinfo JOIN authtable ON userinfo.userId=authtable.userID WHERE userinfo.username=" + appendQuotes(params.username) + "AND authtable.password=" + appendQuotes(params.password);
+            searchForUser(query, connection, res);
         }
-
     })
 }
 
@@ -27,7 +26,7 @@ function appendQuotes(value) {
     return "'" + value + "'";
 }
 
-function searchForUser(query, connection, params, res) {
+function searchForUser(query, connection, res) {
     if (!query) {
         return;
     }
