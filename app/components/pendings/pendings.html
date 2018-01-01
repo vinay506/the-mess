@@ -2,9 +2,10 @@
     <div class="col-md-2">
         <p class="input-group nya-margin">
             <label>Users</label>
+            <label class="important">*</label>
             <ol class="nya-bs-select" title="select" ng-model="selectedUser" data-live-search="true">
-                <li nya-bs-option="user in users">
-                    <a>{{ user.name }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
+                <li nya-bs-option="user in usersList">
+                    <a>{{ user.username }}  <span class="glyphicon glyphicon-ok check-mark"></span>      
        
                  </a>
                 </li>
