@@ -44,7 +44,7 @@ function searchForUser(query, connection, res) {
 
 function getUsersList(req, res) {
     db.getConnection(req, res, function(connection) {
-        connection.query("select * from authtable", function(err, rows) {
+        connection.query("select * from userinfo", function(err, rows) {
             connection.release();
             if (!err) {
                 res.json(rows);

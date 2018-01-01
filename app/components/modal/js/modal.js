@@ -12,7 +12,15 @@ function modalCtrl($scope, tableDetails, json, CofigService, $uibModalInstance, 
         });
     }
     $scope.addPendingDetails = function() {
+        $scope.fieldObj.Balance = getBalance()
         pushTableData();
+    }
+
+    function getBalance() {
+        var amount = 4000;
+        var balance = 0;
+        balance = amount - ($scope.fieldObj.Deposited - $scope.fieldObj.Borrowed);
+        return balance;
     }
 
     $scope.addCartDetails = function() {
